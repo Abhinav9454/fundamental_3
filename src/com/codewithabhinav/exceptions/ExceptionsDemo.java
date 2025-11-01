@@ -2,14 +2,19 @@ package com.codewithabhinav.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class ExceptionsDemo {
     public static void show(){
-        try{
+        try {
             var reader = new FileReader("file.txt");
-        }catch (FileNotFoundException ex){
-            System.out.println(ex.getMessage());
+            var value = reader.read();
+            new SimpleDateFormat().parse("");
         }
-        System.out.println("file opened");
+        catch (IOException | ParseException e) {
+            System.out.println("could not read data");
+        }
     }
 }
