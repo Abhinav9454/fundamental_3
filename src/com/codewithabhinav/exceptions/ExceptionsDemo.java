@@ -1,20 +1,14 @@
 package com.codewithabhinav.exceptions;
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class ExceptionsDemo {
     public static void show(){
-
-        try(
-                var reader = new FileReader("file.txt");
-                var writer = new FileWriter("...");
-        ) {
-            var value = reader.read();
-        }
-        catch (IOException e) {
-            System.out.println("could not read data");
+        var account = new Account();
+        try {
+            account.deposit(1000);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
