@@ -7,7 +7,8 @@ public class Main  {
         try {
             ExceptionsDemo.show();
         } catch (Throwable e) {
-            System.out.println("An unexpected error occurred.");
+            var cause = e.getCause();
+            System.out.println(cause.getMessage());
         }
     }
 }
