@@ -1,14 +1,10 @@
 package com.codewithabhinav;
 
-import com.codewithabhinav.exceptions.ExceptionsDemo;
+import com.codewithabhinav.generics.List;
 
 public class Main  {
     public static void main(String[] args) {
-        try {
-            ExceptionsDemo.show();
-        } catch (Throwable e) {
-            var cause = e.getCause();
-            System.out.println(cause.getMessage());
-        }
+        var list = new List();
+        list.add(1);
     }
 }
