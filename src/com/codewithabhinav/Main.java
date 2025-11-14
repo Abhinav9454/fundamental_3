@@ -1,15 +1,12 @@
 package com.codewithabhinav;
 
-import com.codewithabhinav.generics.List;
+import com.codewithabhinav.generics.GenericList;
 import com.codewithabhinav.generics.User;
 
 public class Main  {
     public static void main(String[] args) {
-        var list = new List();
-        list.add(Integer.valueOf(1));
-        list.add("1");
+        var list = new GenericList<User>();
         list.add(new User());
-
-        int number = (int)list.get(1);
+        User number = list.get(0);
     }
 }
